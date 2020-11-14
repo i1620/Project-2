@@ -1,0 +1,22 @@
+.background {
+    background-color: #2a3e50;
+}
+
+.navbar-brand {
+}
+
+.container {
+    color: white;
+}
+
+.row{
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+table {
+    max-width: 100%;
+}
