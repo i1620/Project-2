@@ -1,8 +1,13 @@
 .background {
-    background-color: #2a3e50;
+    background-color: #2B3E50;
 }
 
-.navbar-brand {
+.navbar {
+    background-color: orange;
+}
+
+.jumbotron{
+    ;
 }
 
 .container {
