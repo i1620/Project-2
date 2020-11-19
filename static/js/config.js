@@ -1,2 +1,2 @@
 // API key
-const API_KEY = "Your key Here";
+const API_KEY = "your key here";
