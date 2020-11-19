@@ -35,6 +35,8 @@
                         <a class="dropdown-item" href="us_map.html">US Map</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="national.html">National Trends</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="state.html">State Trends</a>
                     </div>
             </ul>
         </div>
@@ -49,19 +51,11 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-2">
-                <div class="well">
-                    <h5>Date:</h5>
-                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
-                </div>
-                <div class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Info</h3>
-                    </div>
-                    <div id="sample-metadata" class="panel-body"></div>
-                </div>
+            <div >
+                <div id="scatter"></div>
             </div>
-            <div class="col-md-5">
+            <div> </div>
+            <div >
                 <div id="line"></div>
             </div>
     </div>
