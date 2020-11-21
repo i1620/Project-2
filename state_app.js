@@ -1,11 +1,13 @@
+//Call in data source
 d3.csv("data_sources/daily_up 2.csv").then(function (data) {
     var states = []
     var positives = []
     var deaths = []
     var hospital = []
     var date = []
+    // abbreviations array for the dropdown menu
     var abbr = ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"]
-
+    //creating the dropdown menu
     d3.select("select")
         .selectAll("option")
         .data(abbr)
@@ -15,7 +17,7 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
             return d
         })
 
-// You can also define an anonymous function inline
+    //loop for pulling data into the arrays
     for (var i = 0; i < data.length; i++) {
         states.push(data[i].state);
         positives.push(data[i].positive);
@@ -23,12 +25,9 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
         hospital.push(data[i].hospitalizedCurrently);
         date.push(data[i].date);
     }
-    year = date[0][0] + date[0][1] + date[0][2] + date[0][3];
-    month = date[0][4] + date[0][5];
-    day = date[0][6] + date[0][7]
-    console.log(month + "-" +  day + "-" + year)
 
     var dateformated = []
+    //Loop for changing date format from yyyymmdd to mm-dd-yyyy
     for (var i = 0; i < date.length; i++) {
         year = date[i][0] + date[i][1] + date[i][2] + date[i][3];
         month = date[i][4] + date[i][5];
@@ -36,8 +35,8 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
         dateformated.push(month + "-" +  day + "-" + year)
     }
 
-    console.log(dateformated)
-    // initialize all data for alabama into array to be used for graphs
+
+    // initialize all data for alabama into array to be used initial graph
     function init() {
         var alPositives = []
         var alDeaths = []
@@ -51,7 +50,7 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
                 alDate.push(dateformated[i]);
             }
         }
-        console.log(alDate)
+        //array data starts at present and works backwards to the past, data needs to be reversed to appear correctly left to right
         var trace1 = {
             x: alDate.reverse(),
             y: alDeaths.reverse(),
@@ -99,16 +98,13 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
                 var dropdownMenu = d3.select("#selDataset");
                 // Assign the value of the dropdown menu option to a variable
                 var dataset = dropdownMenu.property("value");
-              
-                // // Initialize x and y arrays
-                // var x = [];
-                // var y = [];
-                // var hover = [];
+                //declare arrays to hold state specific data for updated graph
                 var statePositives = []
                 var stateDeaths = []
                 var stateHospital = []
                 var stateDate = []
                 for (var i = 0; i <states.length; i++) {
+                    //verifying state data being pulled into state specific array is the state selected
                     if (dataset === states[i])
                         statePositives.push(positives[i]),
                         stateDeaths.push(deaths[i]),
@@ -116,6 +112,7 @@ d3.csv("data_sources/daily_up 2.csv").then(function (data) {
                         stateDate.push(dateformated[i]);
 
                 }
+                //array for updating x and y values for trace1, trace2, and trace3
                 var update = {
                     x: [stateDate.reverse(), stateDate.reverse(), stateDate.reverse()],
                     y: [stateDeaths.reverse(), stateHospital.reverse(), statePositives.reverse()]
