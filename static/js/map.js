@@ -31,12 +31,11 @@
 d3.json(link, function(data) {
     // Creating a geoJSON layer with the retrieved data
     L.geoJson(data, {
-      // Style each feature (in this case a neighborhood)
-      style: function(feature) {
-        // console.log(feature.properties.Positive)
+      // Style each state
+      style: function(feature) {        
         return {
           color: "white",
-          // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+          // Call the chooseColor function to decide which color to color our state
           fillColor: getColor(feature.properties.Positive),
           fillOpacity: 0.5,
           weight: 1.5
@@ -46,21 +45,19 @@ d3.json(link, function(data) {
       onEachFeature: function(feature, layer) {
         // Set mouse events to change map styling
         layer.on({
-          // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 90% so that it stands out
           mouseover: function(event) {
             layer = event.target;
             layer.setStyle({
               fillOpacity: 0.9
             });
           },
-          // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
           mouseout: function(event) {
             layer = event.target;
             layer.setStyle({
               fillOpacity: 0.5
             });
           },
-          // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
+          // When a state is clicked, it is enlarged to fit the screen
           click: function(event) {
             myMap.fitBounds(event.target.getBounds());
           }

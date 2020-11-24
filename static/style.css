@@ -6,10 +6,6 @@
     background-color: orange;
 }
 
-.jumbotron{
-    
-}
-
 .container {
     color: white;
 }
@@ -29,6 +25,7 @@ table {
 body {
     padding: 0;
     margin: 10;
+    text-align: center;
   }
   
   #map,
@@ -61,3 +58,4 @@ body {
     margin: 0 0 5px;
     color: #777;
   }
+
