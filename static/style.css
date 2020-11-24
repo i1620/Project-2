@@ -60,18 +60,8 @@ body {
   }
 
 
-/* SKIPPP! */
-  body
-{
-    /* background: #cfd8dc; */
-}
-
 .card-container
 {
-    /* font-family: 'Open Sans', sans serif; */
-    /* font-size: 120px;
-    font-weight: bold; */
-
     width: 500px;
     height: 350px;
     margin: 80px auto;
@@ -107,12 +97,6 @@ body {
     align-items: center;
 }
 
-.front
-{
-    /* color: #fff;
-    background: #2196f3; */
-}
-
 .back
 {
     position: absolute;
@@ -122,7 +106,4 @@ body {
     right: 0;
 
     transform: rotateY(180deg);
-
-    /* color: #2196f3; 
-    background: #fff; */
 }
