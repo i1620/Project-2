@@ -7,12 +7,13 @@
     <title>COVID19 Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/superhero/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LS4/wo5Z/8SLpOLHs0IbuPAGOWTx30XSoZJ8o7WKH0UJhRpjXXTpODOjfVnNjeHu" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="static/style.css"> 
+        <link rel="stylesheet" href="static/css/d3Style.css">
 </head>
 
 <body class="background">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html" style="font-size:xx-large;">COVID19 Proposal</a>
+        <a class="navbar-brand" href="index.html" style="font-size:xx-large;">COVID-19 by Ethnicity</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -42,66 +43,23 @@
             </ul>
         </div>
     </nav>
-
+    <!--<h5>Selected State</h5> -->
+    <!--<select id="selDataset"> -->
+    </select>
     <div class="container">
-        <div class="row mt-5">
-            <div class= "col-md-6">
-                <div class="jumbotron">
-                    <h1>Overview</h1>
-                    <hr class="my-4">
-                    <p class="lead" >
-                        Our goal is to create an interactive COVID dashboard to monitor the continued impact of the virus by
-                        state. We are specifically looking at COVID death rates in states broken down by race/ethnicity and 
-                        the economic impact the diversity shows.
-                    </p>
-                    <h2>Questions Asked</h2>
-                    <p class="lead" >
-                        <ul>
-                            <li>
-                                Is there a correlation between poverty levels and death rates of COVID by county?
-                            </li>
-                            <li>
-                                Is there a correlation between race/ethnicity and death rates of COVID by state?
-                            </li>
-                            <li>
-                                Is there a correlation between race/ethniticy and death rates of COVID by county?
-                            </li>
-                        </ul>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="jumbotron">
-                    <h2>API Links</h2>
-                    <hr class="my-4">
-                    <div class ="row"> 
-                        <div style="text-align: left; color:red">
-                            <ul list-style-type: none>
-                                <li>
-                                <a href="https://covidtracking.com/data/api" style="color: violet; font-size: large;">    
-                                    <b>The COVID Tracking Project</b>
-                                </a>
-                                </li>
-                                <li>
-                                <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/" 
-                                style="color: navy; font-size: large;">
-                                    <b>USA Facts</b>
-                                </a>
-                                </li>
-                                <li>
-                                <a href="https://covidtracking.com/race" style="color: darkcyan; font-size: large;">
-                                    <b>The COVID Tracking Project (Race and COVID)</b>
-                                </a>
-                                </li>
-                            </ul>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <h1></h1>
+          </div>
         </div>
+    <div class="row">
+        <div class="col-xs-12  col-md-9">
+            <div id="scatter">
+                <!-- We append our chart here. -->
+                </div>
+            </div>
+        </div>      
     </div>
-                    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -112,6 +70,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script type="text/javascript" src="static/js/ethnicity_app.js"></script>
 
 </body>
 

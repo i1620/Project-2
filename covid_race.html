@@ -7,12 +7,13 @@
     <title>COVID19 Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/superhero/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LS4/wo5Z/8SLpOLHs0IbuPAGOWTx30XSoZJ8o7WKH0UJhRpjXXTpODOjfVnNjeHu" crossorigin="anonymous">
-    <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="static/style.css"> 
+        <link rel="stylesheet" href="static/css/d3Style.css">
 </head>
 
 <body class="background">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html" style="font-size:xx-large;">COVID19 by Race</a>
+        <a class="navbar-brand" href="index.html" style="font-size:xx-large;">COVID-19 by Race</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -29,7 +30,9 @@
                         Visuals
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="covid_race.html">COVID19 by Race</a>
+                        <a class="dropdown-item" href="covid_race.html">COVID-19 by Race</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="covid_ethnicity.html">COVID-19 by Ethnicity</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="us_map.html">US Map</a>
                         <div class="dropdown-divider"></div>
@@ -40,16 +43,23 @@
             </ul>
         </div>
     </nav>
-
+    <!--<h5>Selected State</h5> -->
+    <!--<select id="selDataset"> -->
+    </select>
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-6">
-                <div class="jumbotron">
+        <div class="row">
+          <div class="col-xs-12 col-md-12">
+            <h1></h1>
+          </div>
+        </div>
+    <div class="row">
+        <div class="col-xs-12  col-md-9">
+            <div id="scatter">
+                <!-- We append our chart here. -->
                 </div>
             </div>
-        </div>
+        </div>      
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -60,6 +70,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+    <script type="text/javascript" src="static/js/race_app.js"></script>
 
 </body>
 
