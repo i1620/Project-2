@@ -21,7 +21,7 @@ function makeResponsive() {
   
     var width = svgWidth - margin.left - margin.right;
     var height = svgHeight - margin.top - margin.bottom;
-  
+
     // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
     var svg = d3
       .select("#scatter")
@@ -183,9 +183,12 @@ function makeResponsive() {
     }
   
     // Retrieve data from the CSV file and execute everything below
-    d3.csv("assets/data/Race_Data_COVID.csv").then(function(csvData){
+    d3.csv("data_sources/Race_Data_COVID.csv").then(function(csvData){
+      var state = []
+
       // parse data
       csvData.forEach(function(data) {
+        state.push(data.State);
         data.Deaths_Total = +data.Deaths_Total;
         data.Deaths_White = +data.Deaths_White;
         data.Deaths_Black = +data.Deaths_Black;
@@ -203,7 +206,17 @@ function makeResponsive() {
         data.Cases_NHPI = +data.Cases_NHPI;
         data.Cases_Other = +data.Cases_Other;
       });
-  
+        console.log(state)
+
+        d3.select("select")
+        .selectAll("option")
+        .data(state)
+        .enter()
+        .append("option")
+        .text(function(d) {
+            return d
+        })
+
       // xLinearScale function above csv import
       var xLinearScale = xScale(csvData, chosenXAxis);
   
@@ -242,7 +255,7 @@ function makeResponsive() {
         .enter()
         .append("text")
         .text(function(d) {return d.abbr;})
-        .classed("StateText", true)
+        .classed("stateText", true)
         .attr("x", d => xLinearScale(d[chosenXAxis]))
         .attr("y", d => yLinearScale(d[chosenYAxis]));
       
@@ -432,7 +445,7 @@ function makeResponsive() {
                 .classed("active", false)
                 .classed("inactive", true);
             }
-            else if (chosenXAxis === "DeathsBlack") {
+            else if (chosenXAxis === "Deaths_Black") {
               deathsWhiteLabel
                 .classed("active", false)
                 .classed("inactive", true);

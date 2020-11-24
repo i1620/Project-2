@@ -46,7 +46,7 @@ card.addEventListener("click", function () {
         rotateY: { value: "+=180", delay: 200 },
         easing: "easeInOutSine",
         duration: 400,
-        complete: function (anim) {
+        complete: function () {
             playing = false;
         }
     });
