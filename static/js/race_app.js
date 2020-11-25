@@ -24,10 +24,14 @@ function makeResponsive() {
 
     // Create an SVG wrapper, append an SVG group that will hold our chart, and shift the latter by left and top margins.
     var svg = d3
-      .select("#scatter")
+      .select("body")
       .append("svg")
-      .attr("width", svgWidth)
-      .attr("height", svgHeight);
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .call(d3.zoom().on("zoom", function () {
+        svg.attr("transform", d3.event.transform)
+     }))
+     .append("g");
   
     // Append an SVG group
     var chartGroup = svg.append("g")
