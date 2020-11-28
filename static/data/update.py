@@ -2,7 +2,7 @@ import json
 import pandas as pd
 import requests
 
-states_geo = open("States_GEO.json", "r")
+states_geo = open("static/data/States_GEO.json", "r")
 states_object = json.load(states_geo)
 states_features = []
 for i in range(52):
