@@ -271,7 +271,8 @@ function makeResponsive() {
         .attr("x", 0)
         .attr("y", 20)
         .classed("active", true)
-        .text("Deaths");
+        .text("Race Deaths")
+        .style("text-decoration", "underline");
 
       var deathsTotalLabel = xlabelsGroup.append("text")
         .attr("x", -50)
@@ -337,7 +338,8 @@ function makeResponsive() {
         .attr("y", 20 - margin.left)
         .attr("x", 0 - (height / 2)) 
         .classed("active", true)
-        .text("Cases");  
+        .text("Race Cases")
+        .style("text-decoration", "underline");  
 
       var casesTotalLabel = ylabelsGroup.append("text")
         .attr("y", 40 - margin.left)
