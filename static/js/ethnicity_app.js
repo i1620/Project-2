@@ -219,7 +219,8 @@ function makeResponsive() {
         .attr("x", 0)
         .attr("y", 20)
         .classed("active", true)
-        .text("Ethnicity Deaths");
+        .text("Ethnicity Deaths")
+        .style("text-decoration", "underline");
 
       var deathsHispanicLabel = xlabelsGroup.append("text")
         .attr("x", -50)
@@ -250,7 +251,8 @@ function makeResponsive() {
         .attr("y", 20 - margin.left)
         .attr("x", 0 - (height / 2)) 
         .classed("active", true)
-        .text("Ethnicity Cases");  
+        .text("Ethnicity Cases")
+        .style("text-decoration", "underline");  
 
       var casesHispanicLabel = ylabelsGroup.append("text")
         .attr("y", 40 - margin.left)
