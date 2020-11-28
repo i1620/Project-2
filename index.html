@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>COVID19 Dashboard</title>
+    <title>COVID-19 Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/superhero/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LS4/wo5Z/8SLpOLHs0IbuPAGOWTx30XSoZJ8o7WKH0UJhRpjXXTpODOjfVnNjeHu" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 
 <body class="background">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="Index" style="font-size:xx-large;">COVID Data</a>
+        <a class="navbar-brand" href="index.html" style="font-size:xx-large;">COVID-19 Proposal</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,27 +20,110 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav offset-9">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html" style="font-size:large;">Proposal</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        PLOTS
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: large;">
+                        Visuals
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-
+                        <a class="dropdown-item" href="covid_race.html">COVID-19 by Race</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="covid_ethnicity.html">COVID-19 by Ethnicity</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="us_map.html">US Map</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="national.html">National Trends</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="state.html">State Trends</a>
                     </div>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="Comparisons.html">COMPARISON</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Data.html">DATA</a>
+                <li>
+                    <a class="nav-link" href="data.html" style="font-size:large;">US Data</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    
+    <div class="container">
+        <div class="row mt-5">
+            <div class= "col-md-6">
+                <div class="jumbotron">
+                    <h1>Overview</h1>
+                    <hr class="my-4">
+                    <p class="lead" >
+                        Our goal is to create an interactive COVID-19 dashboard to monitor the continued impact of the virus 
+                        across the nation. We are specifically looking at COVID-19 positive cases and death rates in relation 
+                        to race/ethnicity, as well as the overall positive cases and deaths per state. We are also interested 
+                        in seeing the progession in positive cases, hospitalizations, and deaths in both a national trend, as 
+                        well as, per states from the first case found till now.
+                    </p>
+                    <h2>Questions Asked</h2>
+                    <p class="lead" >
+                        <ul>
+                            <li>
+                                <b><strong>
+                                Is there a correlation between race/ethenicity and positive cases and deaths rates?
+                            </li>
+                            <li>
+                                Is there a signficant difference in coast states and mid-west states and their 
+                                number of positive cases/death rates?
+                            </li>
+                            <li>
+                                What does the progression of positive cases, hospitalizations, and death rates look 
+                                like across the nation and in every state?
+                                </strong></b>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <h2>API Links</h2>
+                    <hr class="my-4">
+                    <div class ="row"> 
+                        <div style="text-align: left; color:red">
+                            <ul list-style-type: none>
+                                <li>
+                                <a href="https://covidtracking.com/data/api" style="color: violet; font-size: large;">    
+                                    <b>The COVID Tracking Project</b>
+                                </a>
+                                </li>
+                                <li>
+                                <a href="https://usafacts.org/visualizations/coronavirus-covid-19-spread-map/" 
+                                style="color: navy; font-size: large;">
+                                    <b>USA Facts</b>
+                                </a>
+                                </li>
+                                <li>
+                                <a href="https://covidtracking.com/race" style="color: darkcyan; font-size: large;">
+                                    <b>The COVID Tracking Project (Race and COVID)</b>
+                                </a>
+                                </li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <p><b><strong>Click to see a prevention method!</strong></b></p>
+        <div class="card">
+            <div class="front">
+                <img src="static/css/covid-19_model.jpg"></img>
+            </div>
+            <div class="back">
+                <img src="static/css/face_mask.jpg"></img>
+            </div>
+        </div>
+    </div>
+
+                    
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -51,7 +134,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+    <script src="static/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
 </body>
 
 </html>
